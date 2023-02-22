@@ -49,8 +49,9 @@ export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
     DiscordProvider({
-      clientId: env.DISCORD_CLIENT_ID,
-      clientSecret: env.DISCORD_CLIENT_SECRET,
+      clientId: process.env.DISCORD_CLIENT_ID || "1078042484610969630",
+      clientSecret:
+        process.env.DISCORD_CLIENT_SECRET || "HYgv7xZDpkGIkhs_sBEYnyogkEJ3Lb9n",
     }),
     // providers here email provider needs nodemailer installed
     EmailProvider({
